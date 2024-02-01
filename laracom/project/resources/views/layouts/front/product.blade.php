@@ -31,9 +31,19 @@
     </div>
     <div class="col-md-6">
         <div class="product-description">
-            <h1>{{ $product->name }}
-                <small>{{ config('cart.currency') }} {{ $product->price }}</small>
-            </h1>
+            <h1>{{ $product->name }}</h1>
+            <div class="product-total-price">
+                <p>
+                    <b>
+                        <span class="product-price" style="color:#bf0000;font-size: 24px;">{{ $product->price * config('cart.usd_to_jpy_rate') }}{{ config('cart.currency_symbol') }}</span>
+                        +
+                        <span class="shipping-fee">送料980{{ config('cart.currency_symbol') }}</span>
+                    </b>
+                </p>
+            </div>
+            <div class="SKU">
+                <p>SKU:{!! $product->sku !!}</p>
+            </div>
             <div class="description">{!! $product->description !!}</div>
             <hr>
             <div class="row">
@@ -62,13 +72,13 @@
                             </div>
                             <hr>
                         @endif
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="quantity" id="quantity"
-                                placeholder="Quantity" value="{{ old('quantity') }}" />
-                            <input type="hidden" name="product" value="{{ $product->id }}" />
-                        </div>
-                        <button type="submit" class="btn btn-warning"><i class="fa fa-cart-plus"></i> Add to cart
-                        </button>
+                        <p>数量</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="quantity" id="quantity
+                                    placeholder="数量" value="{{ old('quantity') }}" />
+                                <input type="hidden" name="product" value="{{ $product->id }}" />
+                                <button type="submit" class="btn btn-warning"><i class="fa fa-cart-plus"></i>かごに追加</button>
+                            </div>
                     </form>
                 </div>
             </div>
