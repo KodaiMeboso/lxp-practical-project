@@ -6,7 +6,7 @@ use App\Shop\Products\Product;
 use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
 use App\Http\Controllers\Controller;
 use App\Shop\Products\Transformations\ProductTransformable;
-use App\shop\Reviews\Review;
+use App\Shop\Reviews\Review;
 
 class ProductController extends Controller
 {

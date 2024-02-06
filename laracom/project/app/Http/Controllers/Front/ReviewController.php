@@ -40,6 +40,7 @@ class ReviewController extends Controller
             session()->flash('success', '評価とコメントを投稿しました');
         }
 
-        return redirect()->action('Front\ProductController@show', ['product' => $request->slug]);
+        // return redirect()->route('front.review.store', ['product' => $slug]);
+        return back();
     }
 }
