@@ -139,21 +139,9 @@
     </div>
 </div>
 @section('js')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var productPane = document.querySelector('.product-cover');
-            var paneContainer = document.querySelector('.product-cover-wrap');
-
-            new Drift(productPane, {
-                paneContainer: paneContainer,
-                inlinePane: false
-            });
-        });
-    </script>
-@endsection
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+    // コメントと評価のフォームの機能
     const evaluation = document.getElementById('evaluation');
     const comment = document.getElementById('comment');
     const submitButton = document.getElementById('submit-button');
@@ -167,10 +155,17 @@
     // コメントの入力状態が変わったときにボタンの状態を更新
     comment.addEventListener('input', updateSubmitButtonState);
 
-    // 評価の変更を監視する必要がなくなった場合、この行は削除しても構いません
-    // evaluation.addEventListener('change', updateSubmitButtonState);
-
     // ページ読み込み時にもボタンの状態を更新
     updateSubmitButtonState();
+
+    // 商品画像のズーム機能
+    var productPane = document.querySelector('.product-cover');
+    var paneContainer = document.querySelector('.product-cover-wrap');
+
+    new Drift(productPane, {
+        paneContainer: paneContainer,
+        inlinePane: false
+    });
 });
 </script>
+@endsection
