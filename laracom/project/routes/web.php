@@ -103,5 +103,5 @@ Route::namespace('Front')->group(function () {
     Route::get("category/{slug}", 'CategoryController@getCategory')->name('front.category.slug');
     Route::get("search", 'ProductController@search')->name('search.product');
     Route::get("{product}", 'ProductController@show')->name('front.get.product');
-    Route::post("review", 'ReviewController@store')->name('front.review.store');
+    Route::post("review", 'ReviewController@store')->middleware(['auth', 'web'])->name('front.review.store');
 });
