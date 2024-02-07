@@ -25,11 +25,13 @@
                         @foreach ($reviews as $review)
                         <tr>
                             <td>{{ date('M d, Y h:i a', strtotime($review->created_at)) }}</td>
-                            <td><a href="{{ route('admin.products.show', $review->product_id) }}">{{ $review->product->name }}</a></td>
-                            {{-- 商品ID->管理者ページの商品詳細ページへのリンク --}}
-                            <td><a href="{{ route('admin.customers.show', $review->user_id) }}">{{ $review->user->name }} ({{ $review->user_id }})</a></td>
-                            {{-- ユーザーID->管理者ページのユーザー詳細ページへのリンク --}}
-                            <td>{{ $review->rating }}</td>
+                            <td><a href="{{ route('admin.products.show', $review->product_id) }}">{{ $review->product_id }}</a></td>
+                            <td>
+                                <a href="{{ route('admin.customers.show', $review->customer_id) }}">
+                                    {{ $review->customer->name }}({{ $review->customer_id }})
+                                </a>
+                            </td>
+                            <td>{{ $review->evaluation }}</td>
                             <td>{{ $review->comment }}</td>
                         </tr>
                         @endforeach
@@ -37,9 +39,9 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-                <div class="box-footer">
-                    {{ $orders->links() }}
-                </div>
+                {{-- <div class="box-footer">
+                    {{ $reviews->links() }}
+                </div> --}}
             </div>
             <!-- /.box -->
         @endif

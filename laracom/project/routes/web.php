@@ -47,7 +47,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
             Route::namespace('Reviews')->group(function () {
                 Route::resource('reviews', 'ReviewController');
             });
-            // Route::get("reviews", 'ReviewController@index')->name('admin.reviews.index');
             Route::resource('addresses', 'Addresses\AddressController');
             Route::resource('countries', 'Countries\CountryController');
             Route::resource('countries.provinces', 'Provinces\ProvinceController');
