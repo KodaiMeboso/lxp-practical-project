@@ -12,7 +12,7 @@ class ReviewController extends Controller
     {
         $reviews = Review::select('created_at', 'customer_id', 'evaluation', 'product_id', 'comment')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(5);
 
         return view('admin.reviews.list', compact('reviews'));
     }

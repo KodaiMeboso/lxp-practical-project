@@ -39,9 +39,9 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-                {{-- <div class="box-footer">
+                <div class="box-footer">
                     {{ $reviews->links() }}
-                </div> --}}
+                </div>
             </div>
             <!-- /.box -->
         @endif
@@ -50,8 +50,3 @@
     <!-- /.content -->
 @endsection
 {{--
-<div>
-    <a href="{{ route('admin.dashboard') }}">
-        <h1>こんにちは！</h1>
-    </a>
-</div> --}}
