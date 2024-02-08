@@ -127,7 +127,7 @@
                             </div>
                             <div class="comment-group">
                                 <label for="comment">コメント</label>
-                                <input name="comment" id="comment" class="review-control" maxlength="100" minlength="10" placeholder="コメントを入力してください"></input>
+                                <input name="comment" id="comment" class="review-control" maxlength="100" minlength="10" placeholder="コメントを入力してください" />
                             </div>
                         </div>
                         <button type="submit" class="btn btn-review" id="submit-button">登録</button>
