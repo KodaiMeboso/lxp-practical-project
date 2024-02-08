@@ -1,5 +1,7 @@
 <?php
+
 namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OrderStatusTableSeeder::class);
         $this->call(BrandsTableSeeder::class);
         $this->call(AttributeTableSeeder::class);
+        $this->call(ReviewTableSeeder::class);
     }
 }

@@ -10,6 +10,7 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use App\Shop\Reviews\Review;
 
 class Product extends Model implements Buyable
 {
@@ -30,6 +31,11 @@ class Product extends Model implements Buyable
         'YARD' => 'yd'
     ];
 
+    // リレーションシップ
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'product_id', 'id');
+    }
     /**
      * Searchable rules.
      *
@@ -124,7 +130,7 @@ class Product extends Model implements Buyable
      * @param string $term
      * @return Collection
      */
-    public function searchProduct(string $term) : Collection
+    public function searchProduct(string $term): Collection
     {
         return self::search($term)->get();
     }

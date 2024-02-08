@@ -519,8 +519,211 @@ textarea, select {
 /* ************************
         FOOTER
 ************************** */
+.footer-section {
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0 5px;
+}
+
+.footer-menu,
+.footer-social {
+    list-style: outside none none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+.footer-menu li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.footer-menu a {
+    color: #FFFFFF
+}
+
+.footer-menu a:hover,
+.footer-social a:hover {
+    color: #d89522
+}
+
+.footer-social li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0 12px;
+    font-size: 22px;
+}
+
+.footer-social li a {
+    color: #FFFFFF
+}
+
+.footer-section p {
+    font-size: 12px;
+    color: #898989;
+}
+
+.product h1>small {
+    padding-top: 20px;
+    display: block;
+}
+
+a:hover img {
+    border: 1px solid #d89522;
+}
+
+.customer-order-list .tab-pane {
+    padding-top: 15px;
+}
+
+.product-list {
+    min-height: 400px;
+}
+
+.nav.navbar-nav .dropdown {
+    top: 11px;
+}
+
+.form-inline #search-btn {
+    border-top: 1px solid #d89522;
+    border-right: 1px solid #d89522;
+    border-bottom: 1px solid #d89522;
+    border-left: 1px solid #d8cab2;
+}
+
+.product-cover-wrap {
+    border: 1px solid #eee;
+}
+
+.product-description {
+    position: relative;
+}
+
+.excerpt {
+    display: none;
+}
+
+.modal-dialog .modal-content {
+    min-width: 800px;
+}
+
+.modal-dialog h1 {
+    font-size: 18px;
+    text-align: left;
+    line-height: 24px;
+}
+
+.modal-dialog h1 small {
+    display: block;
+    padding-top: 10px;
+}
+
+.modal-dialog .description,
+.modal-dialog .excerpt {
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+}
+
+.modal-dialog .description {
+    display: none;
+}
+
+.modal-dialog #quantity {
+    width: 85px;
+}
+
+.modal-dialog .modal-content {
+    padding: 15px;
+}
+
+.modal-content .excerpt {
+    display: block;
+    text-align: left;
+}
+
+#thumbnails li {
+    margin-bottom: 10px;
+}
+
+#thumbnails li img {
+    width: 100px;
+}
+
+#thumbnails li a:hover img {
+    border: 1px solid #d89522;
+}
+
+#productAttribute {
+    width: 312px;
+}
+
+/* ************************
+        Review
+************************** */
+.product-reviews {
+    margin-top: 1rem;
+}
+.star-rating{
+    font-size: 24px;
+    color: #d89522;
+}
+.product-reviews p {
+    border: 1px solid rgb(104, 103, 103);
+}
+.btn-primary{
+    color: #FFFFFF;
+    background-color: #d89522;
+    border: #d89522;
+}
+.btn-primary:hover {
+    color: #FFFFFF;
+    background-color: #d89522b9;
+    border: #d89522b9;
+}
+/* ************************
+        responsible
+************************** */
 /* パソコン用 */
 @media screen and (min-width: 481px) {
+    .evaluation-group,
+    .comment-group
+    {
+        display: flex;
+        flex-direction: column;
+        margin-right: 1.2rem;
+    }
+    .evaluation-group{
+        width: 112px;
+    }
+    .comment-group {
+        width: 368px;
+    }
+    .evaluation-group select,
+    .comment-group input
+    {
+        height: 40px;
+        border: #333333 1px solid;
+    }
+    .btn-review{
+        border-radius: 1rem;
+        position: absolute;
+        right: 168px;
+        bottom: 0;
+        height: 40px;
+        width: 64px;
+        color: #fff;
+        background-color: #f0ad4e;
+        border-color: #eea236;
+    }
+    .btn-review:hover {
+        color: #fff;
+        background-color: #e08e0b;
+    }
+    .review-group{
+        display: flex;
+    }
     .form-group{
         width: 464px;
         display: flex;
@@ -533,154 +736,35 @@ textarea, select {
             position: absolute;
             bottom: 0;
             width: 100%;
-            /* Set the fixed height of the footer here */
             height: 108px;
-            background-color: #f5f5f5;
-        }
-
-        .footer-section {
-            background-color: #222;
-            color: #fff;
-            padding: 20px 0 5px;
-        }
-
-        .footer-menu,
-        .footer-social {
-            list-style: outside none none;
-            padding: 0;
-            margin-bottom: 15px;
-        }
-
-        .footer-menu li {
-            display: inline-block;
-            list-style: outside none none;
-            margin: 0 15px;
-            font-size: 16px;
-        }
-
-        .footer-menu a {
-            color: #FFFFFF
-        }
-
-        .footer-menu a:hover,
-        .footer-social a:hover {
-            color: #d89522
-        }
-
-        .footer-social li {
-            display: inline-block;
-            list-style: outside none none;
-            margin: 0 12px;
-            font-size: 22px;
-        }
-
-        .footer-social li a {
-            color: #FFFFFF
-        }
-
-        .footer-section p {
-            font-size: 12px;
-            color: #898989;
-        }
-
-        .product h1>small {
-            padding-top: 20px;
-            display: block;
-        }
-
-        a:hover img {
-            border: 1px solid #d89522;
-        }
-
-        .customer-order-list .tab-pane {
-            padding-top: 15px;
-        }
-
-        .product-list {
-            min-height: 400px;
-        }
-
-        .nav.navbar-nav .dropdown {
-            top: 11px;
-        }
-
-        .form-inline #search-btn {
-            border-top: 1px solid #d89522;
-            border-right: 1px solid #d89522;
-            border-bottom: 1px solid #d89522;
-            border-left: 1px solid #d8cab2;
-        }
-
-        .product-cover-wrap {
-            border: 1px solid #eee;
-        }
-
-        .product-description {
-            position: relative;
-        }
-
-        .excerpt {
-            display: none;
-        }
-
-        .modal-dialog .modal-content {
-            min-width: 800px;
-        }
-
-        .modal-dialog h1 {
-            font-size: 18px;
-            text-align: left;
-            line-height: 24px;
-        }
-
-        .modal-dialog h1 small {
-            display: block;
-            padding-top: 10px;
-        }
-
-        .modal-dialog .description,
-        .modal-dialog .excerpt {
-            font-size: 14px;
-            line-height: 16px;
-            text-align: left;
-        }
-
-        .modal-dialog .description {
-            display: none;
-        }
-
-        .modal-dialog #quantity {
-            width: 85px;
-        }
-
-        .modal-dialog .modal-content {
-            padding: 15px;
-        }
-
-        .modal-content .excerpt {
-            display: block;
-            text-align: left;
-        }
-
-        #thumbnails li {
-            margin-bottom: 10px;
-        }
-
-        #thumbnails li img {
-            width: 100px;
-        }
-
-        #thumbnails li a:hover img {
-            border: 1px solid #d89522;
-        }
-
-        #productAttribute {
-            width: 312px;
         }
 }
 
 /* スマホ用 */
 @media screen and (max-width: 480px) {
+    .evaluation-group,
+    .comment-group
+    {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+    .evaluation-group select,
+    .comment-group input {
+        border: #333333 1px solid;
+    }
+
+    .btn-review {
+        border-radius: 1rem;
+        color: #fff;
+        background-color: #f0ad4e;
+        border-color: #eea236;
+    }
+
+    .btn-review:hover {
+        color: #fff;
+        background-color: #e08e0b;
+    }
     .btn {
         width: 100%;
     }
@@ -692,146 +776,6 @@ textarea, select {
         bottom: 0;
         width: 100%;
         height: 124px;
-        background-color: #f5f5f5;
     }
 
-    .footer-section {
-        background-color: #222;
-        color: #fff;
-        padding: 20px 0 5px;
-    }
-
-    .footer-menu,
-    .footer-social {
-        list-style: outside none none;
-        padding: 0;
-        margin-bottom: 15px;
-    }
-
-    .footer-menu li {
-        display: inline-block;
-        list-style: outside none none;
-        margin: 0 15px;
-        font-size: 16px;
-    }
-
-    .footer-menu a {
-        color: #FFFFFF
-    }
-
-    .footer-menu a:hover,
-    .footer-social a:hover {
-        color: #d89522
-    }
-
-    .footer-social li {
-        display: inline-block;
-        list-style: outside none none;
-        margin: 0 12px;
-        font-size: 22px;
-    }
-
-    .footer-social li a {
-        color: #FFFFFF
-    }
-
-    .footer-section p {
-        font-size: 12px;
-        color: #898989;
-    }
-
-    .product h1>small {
-        padding-top: 20px;
-        display: block;
-    }
-
-    a:hover img {
-        border: 1px solid #d89522;
-    }
-
-    .customer-order-list .tab-pane {
-        padding-top: 15px;
-    }
-
-    .product-list {
-        min-height: 400px;
-    }
-
-    .nav.navbar-nav .dropdown {
-        top: 11px;
-    }
-
-    .form-inline #search-btn {
-        border-top: 1px solid #d89522;
-        border-right: 1px solid #d89522;
-        border-bottom: 1px solid #d89522;
-        border-left: 1px solid #d8cab2;
-    }
-
-    .product-cover-wrap {
-        border: 1px solid #eee;
-    }
-
-    .product-description {
-        position: relative;
-    }
-
-    .excerpt {
-        display: none;
-    }
-
-    .modal-dialog .modal-content {
-        min-width: 800px;
-    }
-
-    .modal-dialog h1 {
-        font-size: 18px;
-        text-align: left;
-        line-height: 24px;
-    }
-
-    .modal-dialog h1 small {
-        display: block;
-        padding-top: 10px;
-    }
-
-    .modal-dialog .description,
-    .modal-dialog .excerpt {
-        font-size: 14px;
-        line-height: 16px;
-        text-align: left;
-    }
-
-    .modal-dialog .description {
-        display: none;
-    }
-
-    .modal-dialog #quantity {
-        width: 85px;
-    }
-
-    .modal-dialog .modal-content {
-        padding: 15px;
-    }
-
-    .modal-content .excerpt {
-        display: block;
-        text-align: left;
-    }
-
-    #thumbnails li {
-        margin-bottom: 10px;
-    }
-
-    #thumbnails li img {
-        width: 100px;
-    }
-
-    #thumbnails li a:hover img {
-        border: 1px solid #d89522;
-    }
-
-    #productAttribute {
-        width: 312px;
-    }
 }

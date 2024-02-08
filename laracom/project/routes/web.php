@@ -22,7 +22,7 @@ Route::namespace('Admin')->group(function () {
     Route::post('admin/login', 'LoginController@login')->name('admin.login');
     Route::get('admin/logout', 'LoginController@logout')->name('admin.logout');
 });
-Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.' ], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.'], function () {
     Route::namespace('Admin')->group(function () {
         Route::group(['middleware' => ['role:admin|superadmin|clerk, guard:employee']], function () {
             Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -52,7 +52,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
             Route::resource('attributes', 'Attributes\AttributeController');
             Route::resource('attributes.values', 'Attributes\AttributeValueController');
             Route::resource('brands', 'Brands\BrandController');
-
         });
         Route::group(['middleware' => ['role:admin|superadmin, guard:employee']], function () {
             Route::resource('employees', 'EmployeeController');
@@ -101,4 +100,5 @@ Route::namespace('Front')->group(function () {
     Route::get("category/{slug}", 'CategoryController@getCategory')->name('front.category.slug');
     Route::get("search", 'ProductController@search')->name('search.product');
     Route::get("{product}", 'ProductController@show')->name('front.get.product');
+    Route::post("review", 'ReviewController@store')->middleware(['auth', 'web'])->name('front.review.store');
 });

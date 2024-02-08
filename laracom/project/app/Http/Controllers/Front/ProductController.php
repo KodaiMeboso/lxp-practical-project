@@ -6,6 +6,7 @@ use App\Shop\Products\Product;
 use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
 use App\Http\Controllers\Controller;
 use App\Shop\Products\Transformations\ProductTransformable;
+use App\Shop\Reviews\Review;
 
 class ProductController extends Controller
 {
@@ -54,12 +55,14 @@ class ProductController extends Controller
         $images = $product->images()->get();
         $category = $product->categories()->first();
         $productAttributes = $product->attributes;
+        $reviews = Review::where('product_id', $product->id)->latest()->take(10)->get();
 
         return view('front.products.product', compact(
             'product',
             'images',
+            'category',
             'productAttributes',
-            'category'
+            'reviews',
         ));
     }
 }
