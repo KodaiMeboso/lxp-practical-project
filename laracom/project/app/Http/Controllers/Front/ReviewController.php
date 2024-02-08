@@ -22,15 +22,6 @@ class ReviewController extends Controller
         $slug = $request->input('slug');
 
         if (Auth::check()) {
-            // 既にレビューが存在するかチェック
-            $existingReview = Review::where('product_id', $product_id)
-                ->where('customer_id', Auth::id())
-                ->first();
-            if ($existingReview) {
-                // レビューが既に存在する場合、リダイレクトしてエラーメッセージを表示
-                return redirect()->action('Front\ProductController@show', ['product' => $slug])
-                    ->withErrors(['review' => 'すでにレビューを投稿しています']);
-            }
             $review = new Review;
             $review->product_id = $product_id;
             $review->customer_id = Auth::id();
