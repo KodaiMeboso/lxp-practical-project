@@ -37,7 +37,8 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Back</a>
+                        <a href="{{ route('admin.reviews.index') }}" class="btn btn-default btn-sm">Back</a>
+                        <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Go product list</a>
                     </div>
                 </div>
             </div>

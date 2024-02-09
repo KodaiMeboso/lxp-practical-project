@@ -83,7 +83,7 @@ class CustomerController extends Controller
     public function show(int $id)
     {
         $customer = $this->customerRepo->findCustomerById($id);
-        
+
         return view('admin.customers.show', [
             'customer' => $customer,
             'addresses' => $customer->addresses

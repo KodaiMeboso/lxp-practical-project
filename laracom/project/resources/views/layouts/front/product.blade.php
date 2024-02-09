@@ -108,6 +108,11 @@
                         <p>この商品にはまだレビューがありません。</p>
                         @endforelse
                     @endif
+                    @if($reviews->count() > 0)
+                        <div class="reviews-pagination">
+                            {{ $reviews->links() }}
+                        </div>
+                    @endif
                     </div>
                     @if(auth()->check())
                     <form class="review-form" action="{{ route('front.review.store') }}" method="post">

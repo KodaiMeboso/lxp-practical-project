@@ -24,7 +24,9 @@
         "nicolaslopezj/searchable": "^1.10",
         "paypal/rest-api-sdk-php": "*",
         "santigarcor/laratrust": "^6.3",
-        "shippo/shippo-php": "^1.4"
+        "shippo/shippo-php": "^1.4",
+        "yuzuru-s/redis-recommend": "1.0.*"
+
     },
     "repositories": [
         {

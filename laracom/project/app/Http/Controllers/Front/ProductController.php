@@ -55,7 +55,7 @@ class ProductController extends Controller
         $images = $product->images()->get();
         $category = $product->categories()->first();
         $productAttributes = $product->attributes;
-        $reviews = Review::where('product_id', $product->id)->latest()->take(10)->get();
+        $reviews = Review::where('product_id', $product->id)->latest()->paginate(5);
 
         return view('front.products.product', compact(
             'product',
