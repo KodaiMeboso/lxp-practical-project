@@ -74,14 +74,14 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)
-                    ->withPivot([
-                        'quantity',
-                        'product_name',
-                        'product_sku',
-                        'product_description',
-                        'product_price',
-                        'product_attribute_id'
-                    ]);
+            ->withPivot([
+                'quantity',
+                'product_name',
+                'product_sku',
+                'product_description',
+                'product_price',
+                'product_attribute_id'
+            ]);
     }
 
     /**
@@ -114,6 +114,11 @@ class Order extends Model
     public function orderStatus()
     {
         return $this->belongsTo(OrderStatus::class);
+    }
+
+    public function orderProducts()
+    {
+        return $this->hasMany(OrderProduct::class);
     }
 
     /**
