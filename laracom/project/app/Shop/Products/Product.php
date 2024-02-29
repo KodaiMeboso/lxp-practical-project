@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use App\Shop\Reviews\Review;
+use App\Shop\Orders\OrderProduct;
 
 class Product extends Model implements Buyable
 {
@@ -149,5 +150,31 @@ class Product extends Model implements Buyable
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orderProducts()
+    {
+        return $this->hasMany(OrderProduct::class);
+    }
+
+    /**
+     * Get the average evaluation score from reviews.
+     *
+     * This method is an accessor that calculates and returns the average
+     * evaluation score for the reviews associated with this model instance.
+     * It leverages Eloquent's relationships and aggregation methods to
+     * retrieve the average value of the 'evaluation' column from the related
+     * reviews in the database.
+     *
+     * @return float|null The average evaluation score or null if no reviews
+     */
+    public function getAverageEvaluationAttribute()
+    {
+        // Use Eloquent's relationship method `reviews()` to access the review query builder,
+        // then use the `avg()` method to calculate the average of the 'evaluation' column.
+        return $this->reviews()->avg('evaluation');
     }
 }

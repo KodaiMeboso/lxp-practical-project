@@ -682,6 +682,22 @@ a:hover img {
     background-color: #d89522b9;
     border: #d89522b9;
 }
+
+/* ************************
+        recommend
+************************** */
+.similar-products{
+    display: flex;
+}
+
+.similar-products-section{
+    padding: 0 15px;
+}
+
+.recommend-picture{
+    padding: 0 1rem;
+}
+
 /* ************************
         responsible
 ************************** */
